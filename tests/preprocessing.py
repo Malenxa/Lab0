@@ -1,3 +1,5 @@
+import math
+
 def remove_missing_values(values:[]):
 """
 Removal of missing values
@@ -18,22 +20,35 @@ def fill_missing_values(values, fill_value=0):
     missing_values = [None, '', 'nan', 'NAN']
     return [fill_value if val in missing else val for val in values ]    
 
-def remove_duplicated_values():
+def remove_duplicated_values(values):
     o Input: List of values
     o Output: List of unique values
+    return list(set(values))
 
-def norm_min_max(): 
-normalization of numerical values using the min-max method
+def norm_min_max(num_values, min_num=0.0, max_num=1.0): 
+"""normalization of numerical values using the min-max method
     o Inputs:
         ▪ List of numerical values
         ▪ New minimum (default to 0.0)
         ▪ New maximum (default to 1.0)
     o Output: list of normalized values
+"""
+    min_val = min(num_values)
+    max_val = max(num_values)
+    if num_values is None:
+        return []
+    if min(num_values) == max(num_values):
+        return [new_min for _ in num_values]
+    return [ 
+        min_numm + (val - min_val * (max_num - min_val) / (max_val - min_val))
+        for val in num_values]
 
-def standardization():
-Standardization of numerical values using the z-score method
+def standardization(values):
+"""Standardization of numerical values using the z-score method
     o Input: List of numerical values
     o Output: List of standardized values
+"""
+    
 
 def clipping():
 • Clipping numerical values to a certain range
