@@ -1,2 +1,1 @@
-def main() -> None:
-    print("Hello from lab0!")
+"""Data preprocessing package."""
