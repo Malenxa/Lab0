@@ -78,12 +78,12 @@ uv run python -m src.cli --help
 
 * **Linting (`pylint`):**
   ```bash
-  uv run python -m pylint src/*.py
+  uv run python -m pylint src/*.py tests/*.py
   ```
 
 * **Formatting (`black`):**
   ```bash
-  uv run black src/*.py
+  uv run black src/*.py tests/*.py
   ```
 
 * **Unit & Integration Tests (`pytest`):**
